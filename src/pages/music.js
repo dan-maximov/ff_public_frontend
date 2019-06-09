@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
+import { connect } from 'unistore/react';
+
 import Layout from 'components/Layout';
 import './music.css';
 
@@ -37,4 +40,6 @@ Music.propTypes = {
   music: PropTypes.array.isRequired,
 };
 
-export default Music;
+const enhance = connect('music');
+
+export default enhance(Music);

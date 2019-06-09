@@ -10,7 +10,8 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "unistore": "^3.4.1"
   },
   "devDependencies": {
     "cross-env": "^5.2.0"
@@ -30,5 +31,5 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "proxy": "http://localhost:3000"
+  "proxy": "https://friendlyfang.xyz"
 }

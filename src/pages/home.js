@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import 'moment/locale/ru';
+import { connect } from 'unistore/react';
 import Pagination from 'rc-pagination';
 import 'rc-pagination/assets/index.css';
 import ru_RU from 'rc-pagination/lib/locale/ru_RU';
@@ -12,8 +13,9 @@ import './home.css';
 moment.locale('ru');
 
 const Home = ({ users }) => {
+  const displayableUsers = users.slice(1);
   const [page, setPage] = useState(1);
-  const lengthpages = users.length / 15;
+  const lengthpages = displayableUsers.length / 15;
   const pages = Math.ceil(lengthpages);
 
   const dPage = (page - 1) * 15;
@@ -33,7 +35,7 @@ const Home = ({ users }) => {
             </tr>
           </thead>
           <tbody>
-            {users.slice(dPage, dPage + 15).map(viewer => (
+            {displayableUsers.slice(dPage, dPage + 15).map(viewer => (
               <tr key={viewer._id}>
                 <td>{viewer.username}</td>
                 <td>{Math.floor(viewer.totalxp / 60)}ч</td>
@@ -64,4 +66,6 @@ Home.propTypes = {
   users: PropTypes.array.isRequired,
 };
 
-export default Home;
+const enhance = connect('users');
+
+export default enhance(Home);

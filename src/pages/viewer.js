@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import moment from 'moment';
 import 'moment/locale/ru';
+import { connect } from 'unistore/react';
 
 import Layout from 'components/Layout';
 import './viewer.css';
@@ -51,4 +52,6 @@ const Viewer = ({ match, users }) => {
   );
 };
 
-export default Viewer;
+const enhance = connect('users');
+
+export default enhance(Viewer);
