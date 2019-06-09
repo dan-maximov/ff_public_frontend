@@ -15,6 +15,10 @@ const banlist = [
   '1111azazazel1111',
   'p0sitivitybot',
   'p0lizei_',
+  'bananennanen',
+  'skinnyseahorse',
+  'apricotdrupefruit',
+  'anotherttvviewer'
 ];
 
 const App = () => {
